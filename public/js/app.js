@@ -5,7 +5,8 @@ const messageTwo = document.querySelector('#message-two');
 
 const fetchWeather = async area => {
   try{
-    const response = await fetch(`http://localhost:3000/weather?area=${encodeURIComponent(area)}`);
+    const response = await fetch(`/weather?area=${encodeURIComponent(area)}`);
+    // when heroku is runing the app, url is not local host!
     const weatherData = await response.json();
 
     if(weatherData.error) {

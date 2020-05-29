@@ -10,6 +10,7 @@ const forecast = require('./utils/forecast');
 //console.log(path.join(__dirname, '../public'));
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 //====== define paths for Express config
 const publicDirPath = path.join(__dirname, '../public');
@@ -88,8 +89,8 @@ app.get('*', (req, res) => { //* means anything except what has not been matched
   }); 
 });
 
-app.listen(3000, () => { //port 3000 is not default, it is a common port for development
-  console.log('Server is up on port 3000');
+app.listen(port, () => { //port 3000 is not default, it is a common port for development
+  console.log('Server is up on port ' + port);
 });
 
 // app.get('', (req, res) => { // takes 2 arguments; first one is 'route', second one is 'callback'
