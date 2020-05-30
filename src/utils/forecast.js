@@ -10,11 +10,14 @@ const forecast = (latitude, longitude, callback) => {
   if(body.error) return callback('Please enter a valid location.'+ body.error.info);
   if(body.location.country===null) return callback('Please enter a valid location.');
 
+  console.log(body)
   const location = `${body.location.name}, ${body.location.region}, ${body.location.country}`;
   const weather = body.current.weather_descriptions[0];
   const temperature = body.current.temperature;
   const feelsLike = body.current.feelslike;
-  callback(undefined, {location, weather, temperature, feelsLike});
+  const humidity = body.current.humidity;
+  const uvIndex = body.current.uv_index;
+  callback(undefined, {location, weather, temperature, feelsLike, humidity, uvIndex});
   })
 }
 
