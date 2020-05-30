@@ -13,6 +13,7 @@ const fetchWeather = async area => {
     if(weatherData.error) {
       messageOne.textContent = 'Error has occured';
       messageTwo.textContent = weatherData.error;
+      messageThree.textContent = '';
       return;
     }
 
@@ -22,6 +23,7 @@ const fetchWeather = async area => {
   } catch(error) {
     messageOne.textContent = 'Error has occured';
     messageTwo.textContent = error.message;
+    messageThree.textContent = '';
   }
 }
 
@@ -30,6 +32,7 @@ weatherForm.addEventListener('submit', async event => {
 
   messageOne.textContent = 'Loading...';
   messageTwo.textContent = '';
+  messageThree.textContent = '';
 
   const area = searchInput.value;
   await fetchWeather(area);
