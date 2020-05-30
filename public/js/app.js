@@ -18,7 +18,7 @@ const fetchWeather = async area => {
 
     messageOne.textContent = `Location: ${weatherData.location}`;
     messageTwo.textContent = `${weatherData.weather}, The temperature is ${weatherData.temperature} degrees, feels like ${weatherData.feelsLike} degrees.`;
-    messageThree.textContent = `The humidity is ${weatherData.humidity} and the UV index is ${weatherData.uvIndex}.`
+    messageThree.textContent = `The humidity is ${weatherData.humidity}% and the UV index is ${weatherData.uvIndex}.`
   } catch(error) {
     messageOne.textContent = 'Error has occured';
     messageTwo.textContent = error.message;
